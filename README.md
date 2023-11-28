@@ -22,3 +22,5 @@
 * Install Pen and pen holder to moving base. Then use `Delta X Software` to move the pen down to almost touch the drawing plane. Taking that Z position and adding 15 we will get the Z_SAFE parameter. Then put it in `Z Safe` box.
 * Then we map the robot coordinates with the drawing plane by 3 points. Move the pen to touch 3 points in drawing plane and get the positions, then fill 3 points parameters in the `Right Menu`.
 * After you done everything, just clicking `Export Gcodes` icon button in the `Left Tool Bar`. Copy that G-code and paste it in `Delta X Software` to start drawing.
+
+![Rose](https://raw.githubusercontent.com/minhhieubkdn/DeltaXArtServer/master/imgs/rose.png)
