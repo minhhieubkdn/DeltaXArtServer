@@ -26,9 +26,8 @@ Visit the [Delta X Art GitHub repository](https://github.com/minhhieubkdn/DeltaX
 8. Choose the right robot model (D400, D600 or D800).
 9. Install the pen and pen holder onto the moving base.
 10. Use the `Delta X Software` to lower the pen until it is nearly touching the drawing plane. Take note of this Z position and add 15 to obtain the Z_SAFE parameter. Enter this value in the Z Safe box.
-11. Then we map the robot coordinates with the drawing plane by 3 points. Move the pen to touch 3 points in drawing plane and get the positions, then fill 3 points parameters in the `Right Menu`.
-12. Map the robot coordinates to the drawing plane by touching three points on the drawing. Record the positions of these points and enter them in the `Right Menu`.
-13. Once all settings are configured, click the `Export Gcodes` icon in the `Left Tool Bar`.
-14. Copy the generated G-code and paste it into the `Delta X Software` to initiate the drawing process.
+11. Map the robot coordinates to the drawing plane by touching three points on the drawing. Record the positions of these points and enter them in the `Right Menu`.
+12. Once all settings are configured, click the `Export Gcodes` icon in the `Left Tool Bar`.
+13. Copy the generated G-code and paste it into the `Delta X Software` to initiate the drawing process.
 
 ![Rose](/imgs/rose.png)
