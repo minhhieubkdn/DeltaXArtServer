@@ -38,7 +38,8 @@ class WebSocketServer(QObject):
 
                     return_mess = filename + "|"
                     for file in files:
-                        return_mess += file + "|"
+                        if file.find(".json") > 0:
+                            return_mess += file + "|"
                     
                     await websocket.send(return_mess)
 
@@ -55,24 +56,20 @@ class WebSocketServer(QObject):
             await asyncio.Future()  # keep the server running indefinitely
 
 
+
+import socket
+
+def get_local_ip():
+    try:
+        # Get the local host name
+        host_name = socket.gethostname()
+        local_ip = socket.gethostbyname(host_name)
+        return local_ip
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 if __name__ == '__main__':
-    server = WebSocketServer()
+    host = get_local_ip()
+    server = WebSocketServer(host=host)
     asyncio.run(server.start())
 
-# import asyncio
-# import websockets
-# import json
-
-# async def server(websocket, path):
-#     data = await websocket.recv()
-#     # print(f"Nhận được chuỗi dữ liệu từ ứng dụng QT Quick: {data}")
-#     json_data = json.loads(data)
-
-#     # Lưu đối tượng Python thành file JSON bằng json.dump()
-#     with open('data.json', 'w') as f:
-#         json.dump(json_data, f)
-
-# start_server = websockets.serve(server, "localhost", 5000)
-
-# asyncio.get_event_loop().run_until_complete(start_server)
-# asyncio.get_event_loop().run_forever()
