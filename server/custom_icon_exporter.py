@@ -6,7 +6,7 @@ def m_round(num=0.123456):
     return num
 
 
-class LinesExportor():
+class CustomIconExporter():
     def __init__(self, icon_path="data/users/admin/E=mc2.json"):
         self.icon_path = icon_path
 
@@ -76,13 +76,14 @@ class LinesExportor():
 
         with open(filename, 'r') as f:
             json_data = json.load(f)
+            
         ob = dot_object_from_dict(json_data)
         gcodes = []
 
-        frame_path = [[(-500, 354.5), (500, 354.5),
-                       (500, -354.5), (-500, -354.5), (-500, 354.5)]]
+        frame_path = DRAWING_FRAME_PATH
         frame_in_ws = self.scaleToRobotRange(frame_path, 0, -170, 200, 200)
         print("frame_in_ws: ",frame_in_ws)
+
         fig, ax = plt.subplots()
 
         for line in frame_in_ws:
@@ -91,7 +92,7 @@ class LinesExportor():
 
         gcodes.append("G01 X0 Y0 Z{0}".format(Z_SAFE))
 
-        z = 0.0
+        z = float(Z_SAFE)
 
         for i, (px, py) in enumerate(frame_in_ws[0]):
             z = m_round(self.calculate_z_value(px, py))
@@ -150,7 +151,7 @@ class LinesExportor():
 
 if __name__ == "__main__":
 
-    ex = LinesExportor("data/users/admin/E=mc2.json")
+    ex = CustomIconExporter("data/users/admin/E=mc2.json")
 
     # export each part
     ex.export_gcodes("data/users/admin/p1.json")
