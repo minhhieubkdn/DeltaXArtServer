@@ -15,7 +15,7 @@
 * Login with default account `admin` and password `123456`.
 * Open pre-project by click icon `Folder` button under `Open Recent`.
 * Open `Rose.json` project.
-* Click the `<` Expand button in the right side to open `Right Menu`.
+* Click the `<` icon button in the right side to open `Right Menu`.
 * Click `Export G-code` button to move to Export Gcode Menu Screen.
 * Click `Move` icon button at the left - bottom of the screen to enable moving and scaling action. Now use the left mouse to drag and drop, mouse wheel to scale the drawing. Click `Move` icon button again to disable drawing movement.
 * Choose the right robot model (D400, D600 or D800)
@@ -23,4 +23,4 @@
 * Then we map the robot coordinates with the drawing plane by 3 points. Move the pen to touch 3 points in drawing plane and get the positions, then fill 3 points parameters in the `Right Menu`.
 * After you done everything, just clicking `Export Gcodes` icon button in the `Left Tool Bar`. Copy that G-code and paste it in `Delta X Software` to start drawing.
 
-![Rose](https://raw.githubusercontent.com/minhhieubkdn/DeltaXArtServer/master/imgs/rose.png)
+![Rose](/imgs/rose.png)
